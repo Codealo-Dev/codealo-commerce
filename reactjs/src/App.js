@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Home from "./components/sections/Home"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Detalle from "./components/pages/detalle";
+import Acer from "./components/pages/Acer";
+import Hp from "./components/pages/Hp";
+import Asus from "./components/pages/Asus";
+import Dell from "./components/pages/Dell";
+import MSI from "./components/pages/MSI";
 
-function App() {
+
+//Estilos CSS
+import "./styles/styles.css";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edita <code>src/App.js</code> y guarda para ver cambios.
-        </p>
-        <a
-          className="App-link"
-          href="https://codealo.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Aprende con Codealo
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+      <BrowserRouter>
+      <Routes>
+      
+      <Route exact path="/" element={<Home/>}></Route>
+      <Route exact path="/detalle" element={<Detalle />}></Route>
+      <Route exact path="/acer" element={<Acer />}></Route>
+      <Route exact path="/hp" element={<Hp />}></Route>
+      <Route exact path="/asus" element={<Asus/>}></Route>
+      <Route exact path="/dell" element={<Dell/>}></Route>
+      <Route exact path="/msi" element={<MSI/>}></Route>
+      <Route exact paht ="/detalle" element={<Detalle/>}></Route>
+      
+
+    </Routes>
+    </BrowserRouter>
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default App
+
